@@ -4,10 +4,11 @@ const { MongoClient } = require("mongodb");
 // const mongoose = require('mongoose');
 require("dotenv").config({ path: "./config.env" });
 
-
-const port = process.env.PORT || 5000;
 const app = express();
+const port = process.env.PORT || 5000;
+
 app.get('/', (req, res) => res.send('Hello world'));
+app.use('/images', express.static('images'));
 app.use(cors());
 app.use(express.json());
 
@@ -21,6 +22,16 @@ const startServer = async () => {
     console.log('Connected to MongoDB Atlas');
     const db = client.db();
     
+    app.get('/api/projects/:category', async (req, res) => {
+      const category = req.params.category;
+      try {
+        const projects = await db.collection("projects").find({ category }).toArray();
+        res.json(projects);
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+      }
+    })
     // POST route to create a review
     app.post('/api/reviews', async (req, res) => {
       const { name, rating, reviewText } = req.body;
