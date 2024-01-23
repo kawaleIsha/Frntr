@@ -12,7 +12,7 @@ const Projects = ({ category }) => {
     }, [category]);
 
     return (
-        <div>
+        <div className='m-3'>
             <h3>{category.charAt(0).toUpperCase() + category.slice(1)} Projects</h3>
             {projects.length > 0 ? (
                 <div style={{ display: 'flex', justifyContent: 'space-evenly'}}>
