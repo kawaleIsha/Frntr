@@ -15,8 +15,8 @@ const App = () => {
       <Routes>
         <Route />
       </Routes>
-      <h2>Categories</h2>
-      <Tabs
+      <h2 className='m-2'>Categories</h2>
+      <Tabs className='m-2'
       id='controlled-tab-example'
       activeKey={key}
       onSelect={(k) => setKey(k)}
