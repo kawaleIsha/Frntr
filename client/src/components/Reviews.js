@@ -35,8 +35,8 @@ const Reviews = () => {
 
     return (
         <div className="container mt-4">
-            <div className='row' style={{ height: '33vh' }}>
-                <div className='col-md-9' style={{ height: '100%' }}>
+            <div className='row' style={{ height: '33%' }}>
+                <div className='col-md-9'>
                     <h3>Customer Reviews</h3>
                     {reviews.length > 0 ? (
                         <Carousel className='m-3' fade data-bs-theme="dark" style={{height: '75%'}}>
