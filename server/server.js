@@ -53,7 +53,7 @@ const startServer = async () => {
         res.json(reviews);
       } catch (error) {
         console.error(error);
-        res.status(500).json({ error: err.message });
+        res.status(500).json({ error: error.message });
       }
     });
 

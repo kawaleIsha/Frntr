@@ -5,6 +5,8 @@ import { Route,Routes } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Reviews from './components/Reviews';
 import Projects from './components/categories';
+import WhatsAppIcon from './components/whatsappIcon';
+import Footer from './components/footer';
 
 const App = () => {
   const [key, setKey] = useState('hall');
@@ -35,6 +37,8 @@ const App = () => {
         </Tab>
       </Tabs>
       <Reviews />
+      <Footer />
+      <WhatsAppIcon />
     </div>
   );
 }
